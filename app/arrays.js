@@ -89,6 +89,18 @@ exports.arraysAnswers = {
 
   duplicates: function(arr) {
 
+    var dupes = [];
+    arr.sort();
+    for(var i = 0, x = arr.length; i < x; i++){
+
+      var firstLoc = arr.indexOf(arr[i]);
+
+      if( (i != firstLoc) && (dupes.indexOf(arr[i]) === -1) ){
+        dupes.push(arr[i]);
+      }
+    }
+
+    return dupes;
   },
 
   square: function(arr) {
@@ -99,6 +111,16 @@ exports.arraysAnswers = {
   },
 
   findAllOccurrences: function(arr, target) {
+    var locationArray = [];
+    for(var i = 0, x = arr.length; i < x; i++){
 
-  }
+      if(arr[i] === target){
+        locationArray.push(i);
+      }
+
+    }
+    return locationArray;
+
+  },
+
 };
